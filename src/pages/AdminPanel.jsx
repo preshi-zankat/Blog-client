@@ -58,6 +58,7 @@ const AdminPanel = () => {
     } catch (error) {
       console.error("Error saving post:", error);
     }
+
   };
 
   // Handle delete post

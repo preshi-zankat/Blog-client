@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
 import PostDetails from "./pages/PostDetails";
 import AdminPanel from "./pages/AdminPanel";
 
 const App = () => {
+  
   return (
     <Router>
       <Navbar />
