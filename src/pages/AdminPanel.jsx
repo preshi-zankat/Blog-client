@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../api/axiosConfig";
+import { useNavigate } from "react-router-dom";
 
 const AdminPanel = () => {
   const [posts, setPosts] = useState([]);
@@ -9,6 +10,7 @@ const AdminPanel = () => {
     tags: "",
   });
   const [editingPostId, setEditingPostId] = useState(null);
+  const navigate = useNavigate();
 
   // Fetch all posts
   useEffect(() => {
@@ -45,12 +47,14 @@ const AdminPanel = () => {
           ...formData,
           tags: formData.tags.split(","),
         });
+
         console.log("Post created:", response.data);
       }
       // Reset form and refresh posts
       setFormData({ title: "", content: "", tags: "" });
       setEditingPostId(null);
       fetchPosts();
+      navigate("/");
     } catch (error) {
       console.error("Error saving post:", error);
     }
