@@ -23,7 +23,7 @@ const Homepage = () => {
               `https://api.unsplash.com/search/photos?query=${query}&client_id=qHoSgW1oMKc5Pz_YbpEtmOxwfz1BaYH4tx-vAV3eSI8`
             );
             // If no image is found, use a fallback image
-            return imageResponse.data.results[0]?.urls?.regular || "https://via.placeholder.com/400";
+            return imageResponse.data.results[0]?.urls?.regular || "https://www.shutterstock.com/image-illustration/new-post-neon-text-blogging-260nw-1538276189.jpg";
           })
         );
         setImages(imagesForPosts);
